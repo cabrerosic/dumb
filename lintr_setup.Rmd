@@ -31,6 +31,10 @@ Notes:
 1. `.lintr` file needs a empty return at the end of the file. 
 2. Somewhat annoyingly, it does not appear to be possible to use different linters for functions vs. other objects. This makes it somewhat manual to implement Google's R style guide. 
 
+## Excluding stuff from linting
+
+You can exclude whole files or directories from linting 
+
 ## Setting up github actions.
 
 ```{r eval=FALSE}

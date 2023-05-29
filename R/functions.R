@@ -47,7 +47,7 @@ highCyclomatic_complexity <- function(x){
     print("yay")
   } else if(x == 20){
     print("yay")
-  else {
+  } else {
     print("x is big")
   }
 }
