@@ -1,0 +1,42 @@
+---
+title: "How to set up a lintr in R"
+author: "Irineo Cabreros"
+date: "2023-05-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## .lintr file
+
+In a package or project directory, type `lintr::use_lintr()`. This will initialize a `.lintr` file. This is the one we are currently using in `election-model`: 
+
+```
+linters: linters_with_defaults(
+    line_length_linter = NULL,
+    object_name_linter(styles = c("CamelCase", "snake_case")),
+    object_usage_linter = NULL
+  )
+exclusions: list(
+    "random_sketching"
+  )
+encoding: "UTF-8"
+
+```
+
+Notes: 
+
+1. `.lintr` file needs a empty return at the end of the file. 
+2. Somewhat annoyingly, it does not appear to be possible to use different linters for functions vs. other objects. This makes it somewhat manual to implement Google's R style guide. 
+
+## Setting up github actions.
+
+```{r eval=FALSE}
+# in a project:
+usethis::use_github_action("lint-project")
+
+# in a package:
+usethis::use_github_action("lint")
+```
