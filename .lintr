@@ -4,5 +4,6 @@ linters: linters_with_defaults(
     object_usage_linter = NULL
   )
 exclusions: list(
+    "random_sketching"
   )
 encoding: "UTF-8"
